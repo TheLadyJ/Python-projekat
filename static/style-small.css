@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+h1, h2, p, input,h3 {
+    font-family: 'Lato', 'Times New Roman', serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#head {
+    padding: 0 5px;
+    width: 300px;
+    background-color: rgb(178, 160, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#head p{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#head h3{
+    margin-top: 0;
+    margin-bottom: 35px;
+} 
+
+#speechContainer {
+    margin: 10px; 
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: rgb(255, 249, 241);
+} 
+
+#submitButton {
+    background-color: #0191fe;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 30px;
+    margin-top: 20px;
+    width: 160px;
+}
+
+#submitButton:hover {
+    cursor: pointer;
+} 
+
+#speechTranscriptContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 300px;
+    background-color: rgb(216, 208, 233);
+}
+
+
+#speechText{
+    font-size: 18px;
+    width: 200px;
+    margin-bottom: 35px;
+}

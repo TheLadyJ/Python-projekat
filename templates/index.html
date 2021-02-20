@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="{{ url_for('static', filename='style-wide.css') }}">
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="{{ url_for('static', filename='style-small.css') }}">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="speechContainer">
+        <div id=head>
+            <p>Youtube Video To Text Converter</p>
+        <h3> Test place to transcribe the wanted Youtube video to text </h3>
+
+        </div>
+        <h1>Enter a Youtube video link:</h1>
+        <form name="passURL" method="POST">
+            <input type="url" name="url">
+            <br>
+            <input type="submit" id="submitButton" value="Transcribe">
+        </form>
+
+
+        <!-- U slucaju da promenljiva transcript nema vrednost, naslov Transcript se ne prikazuje (kao ni paragraf u kome bi bio odgovarajuci tekst) -->
+        {% if transcript != "" %}
+        <div id="speechTranscriptContainer">
+            <h2>Transcript</h2>
+            <p id="speechText">{{transcript}}</p>
+        </div>
+        {% endif %}
+
+    </div>
+    
+</body>
+</html>
