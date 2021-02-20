@@ -7,15 +7,17 @@
     <link rel="stylesheet" media="screen and (min-width: 900px)" href="{{ url_for('static', filename='style-wide.css') }}">
     <link rel="stylesheet" media="screen and (max-width: 900px)" href="{{ url_for('static', filename='style-small.css') }}">
 
-    <title>Document</title>
+    <title>Youtube Video To Text Converter</title>
 </head>
 <body>
     <div id="speechContainer">
-        <div id=head>
+        <!-- Naslov sajta sa kratkim opisom -->
+        <div id=head> 
             <p>Youtube Video To Text Converter</p>
-        <h3> The best place to transcribe the wanted Youtube video to text </h3>
-
+            <h3> The best place to transcribe the wanted Youtube video to text </h3>
         </div>
+        
+        <!-- Forma u kojoj korisnik unosi link željenog YouTube videa -->
         <h1>Enter a Youtube video link:</h1>
         <form name="passURL" method="POST">
             <input type="url" name="url">
@@ -24,15 +26,16 @@
         </form>
 
 
-        <!-- U slucaju da promenljiva transcript nema vrednost, naslov Transcript se ne prikazuje (kao ni paragraf u kome bi bio odgovarajuci tekst) -->
+        <!-- U slučaju da promenljiva transcript predstavlja prazan string, naslov Transcript se ne prikazuje (kao ni paragraf u kome bi bio odgovarajući tekst) -->
         {% if transcript != "" %}
         <div id="speechTranscriptContainer">
             <h2>Transcript</h2>
+            <!-- U duplim vitičastim zagradama će biti primljen preveden tekst putem Flask-a -->
             <p id="speechText">{{transcript}}</p>
         </div>
         {% endif %}
 
     </div>
-    
+
 </body>
 </html>
